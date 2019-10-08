@@ -208,6 +208,16 @@ int test_memccpy()
 		;
 }
 
+int test_memchr()
+{
+	char str[30] = { 'S', 'a', '\0', 'l', 'u', 't' };
+	return strcmp(memchr(str, 'l', 30), ft_memchr(str, 'l', 30)) == 0
+		&& memchr(str, 't', 5) == ft_memchr(str, 't', 5)
+		&& memchr(str, 'l', 2) == ft_memchr(str, 'l', 2)
+		&& strcmp(memchr(str, '\0', 30), ft_memchr(str, '\0', 30)) == 0
+		;
+}
+
 void test(char* name, int res)
 {
 	printf("--- test %s ---\n", name);
@@ -233,5 +243,6 @@ int main()
 	test("memmove", test_memmove());
 	test("memcpy", test_memcpy());
 	test("memccpy", test_memccpy());
+	test("memchr", test_memchr());
 	return (0);
 }

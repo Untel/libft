@@ -12,7 +12,7 @@
 
 #include <string.h>
 
-void *memchr(const void *s, int c, size_t n)
+void *ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char *tmp_s;
 
