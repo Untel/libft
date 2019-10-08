@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/07 09:29:46 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/07 17:59:57 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/10/07 13:09:40 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/10/07 13:29:48 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void *ft_memmove(void *dst, void* src, size_t len)
 {
-	int i;
+	unsigned char *tmp_dst;
+	unsigned char *tmp_src;
 
-	i = 0;
-	while (i < n)
+	tmp_dst = dst;
+	tmp_src = src;
+	if (src < dst && dst < src + len)
 	{
-		if (!s1[i] || !s2[i] || s1[i] != s2[i]){
-			i = (unsigned char)s1[i] - (unsigned char)s2[i];
-			return (i > 0 ? 1 : i < 0 ? -1 : 0);
-		}
-		i++;
+		tmp_dst += len;
+		tmp_src += len;
+		while (len--)
+			*--tmp_dst = *--tmp_src;
 	}
-	return (0);
+	else
+		while (len--)
+			*tmp_dst++ = *tmp_src++;
+	return dst;
 }

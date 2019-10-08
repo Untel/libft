@@ -10,15 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 #include <string.h>
-#include "libft.h"
 #include <ctype.h>
+#include <stdlib.h>
+
+void test_strs(char *str1, char *str2)
+{
+	printf("---- CMP STRINGS ----\n");
+	printf("1 = '%s'\n", str1);
+	printf("2 = '%s'\n", str2);
+	printf("---------------------\n");
+}
+
 int test_isalpha()
 {
 	return isalpha('A') == ft_isalpha('A')
 		&& isalpha('z') == ft_isalpha('z')
-		&& isalpha(';') == ft_isalpha(';');
+		&& isalpha(';') == ft_isalpha(';')
+		;
 }
 
 int test_isalnum()
@@ -27,13 +38,15 @@ int test_isalnum()
 		&& isalnum('z') == ft_isalnum('z')
 		&& isalnum(';') == ft_isalnum(';')
 		&& isalnum('0') == ft_isalnum('0')
-		&& isalnum('9') == ft_isalnum('9');
+		&& isalnum('9') == ft_isalnum('9')
+		;
 }
 
 int test_isdigit()
 {
 	return isdigit('0') == ft_isdigit('0')
-		&& isdigit('9') == ft_isdigit('9');
+		&& isdigit('9') == ft_isdigit('9')
+		;
 }
 
 int	test_isascii()
@@ -41,7 +54,8 @@ int	test_isascii()
 	return isascii('a') == ft_isascii('a')
 		&& isascii(42) == ft_isascii(42)
 		&& isascii(-1) == ft_isascii(-1)
-		&& isascii(-123456789) == ft_isascii(-123456789);
+		&& isascii(-123456789) == ft_isascii(-123456789)
+		;
 }
 
 int test_isprint()
@@ -49,14 +63,16 @@ int test_isprint()
 	return isprint(31) == ft_isprint(31)
 		&& isprint(32) == ft_isprint(32)
 		&& isprint(126) == ft_isprint(126)
-		&& isprint(127) == ft_isprint(127);
+		&& isprint(127) == ft_isprint(127)
+		;
 }
 
 int test_toupper()
 {
 	return toupper(10) == ft_toupper(10)
 		&& toupper(2147483647) == ft_toupper(2147483647)
-		&& toupper(0) == ft_toupper(0);
+		&& toupper(0) == ft_toupper(0)
+		;
 }
 
 int test_tolower()
@@ -64,7 +80,8 @@ int test_tolower()
 	return tolower(10) == ft_toupper(10)
 		&& tolower(2147483647) == ft_tolower(2147483647)
 		&& tolower('z') == ft_tolower('z')
-		&& tolower(0) == ft_tolower(0);
+		&& tolower(0) == ft_tolower(0)
+		;
 }
 
 int test_strchr()
@@ -91,13 +108,19 @@ int test_strrchr()
 
 int test_strncmp()
 {
+	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salut", "Salut", 5), ft_strncmp("Salut", "Salut", 5));
+	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Saluy", "Saluw", 5), ft_strncmp("Saluy", "Saluw", 5));
+	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salu", "Salut", 3), ft_strncmp("Salu", "Salut", 3));
+	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salut", "Salut", 3), ft_strncmp("Salut", "Salut", 3));
+	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salu", "Salut", 20), ft_strncmp("Salu", "Salut", 20));
+	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salut", "Salut", 20), ft_strncmp("Salut", "Salut", 20));
 	return strncmp("Salut", "Salut", 5) == ft_strncmp("Salut", "Salut", 5)
 		&& strncmp("Salu", "Salut", 5) == ft_strncmp("Salu", "Salut", 5)
 		&& strncmp("Salu", "Salut", 3) == ft_strncmp("Salu", "Salut", 3)
 		&& strncmp("Salut", "Salut", 3) == ft_strncmp("Salut", "Salut", 3)
 		&& strncmp("Salu", "Salut", 20) == ft_strncmp("Salu", "Salut", 20)
 		&& strncmp("Salut", "Salut", 20) == ft_strncmp("Salut", "Salut", 20)
-	;
+		;
 }
 
 int test_strnstr()
@@ -127,10 +150,68 @@ int test_atoi()
 	return 1;
 }
 
+int test_memset()
+{
+	char str[50];
+	char str2[50];
+
+	strcpy(str, "Bonjour a touuuuus");
+	strcpy(str2, "Bonjour a touuuuus");
+	memset(str,'x', 7);
+	ft_memset(str2,'x', 7);
+
+	return strcmp(str, str2) == 0
+		;
+}
+
+int test_memmove()
+{
+	// char str[50];
+	// char str2[50];
+	// char *src = "Hello";
+	// strcpy(str, "Bonjour a touuuuus");
+	// strcpy(str2, "Bonjour a touuuuus");
+	// memmove(src, str, 5);
+	// ft_memmove(src, str2, 5);
+	// //test_strs(str, str2);
+	char str[11] = "0123456789";
+	ft_memmove(&str[3], &str[0], 4); //might blow up
+	char str2[11] = "0123456789";
+	memmove(&str2[3], &str2[0], 4); //might blow up
+	return strcmp(str, str2) == 0
+		;
+}
+
+int test_memcpy()
+{
+	char str[50];
+	char str2[50];
+	char *src = "Hello";
+	strcpy(str, "Bonjour a touuuuus");
+	strcpy(str2, "Bonjour a touuuuus");
+	memcpy(str, src, 5);
+	ft_memcpy(str2, src, 5);
+	return strcmp(str, str2) == 0
+		;
+}
+
+int test_memccpy()
+{
+	char str[50];
+	char str2[50];
+	char *src = "Hello";
+	strcpy(str, "Bonjour a touuuuus");
+	strcpy(str2, "Bonjour a touuuuus");
+	memcpy(str, src, 5);
+	ft_memcpy(str2, src, 5);
+	return strcmp(str, str2) == 0
+		;
+}
+
 void test(char* name, int res)
 {
 	printf("--- test %s ---\n", name);
-	printf(res ? "ok" : "XXXXXXXXXX NO XXXXXXXXX");
+	printf(res ? "ok" : "XXXXXXXX NO XXXXXXXX");
 	printf("\n--------------------\n");
 }
 
@@ -148,5 +229,9 @@ int main()
 	test("strncmp", test_strncmp());
 	test("strnstr", test_strnstr());
 	test("atoi", test_atoi());
+	test("memset", test_memset());
+	test("memmove", test_memmove());
+	test("memcpy", test_memcpy());
+	test("memccpy", test_memccpy());
 	return (0);
 }
