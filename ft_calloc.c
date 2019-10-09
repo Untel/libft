@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 15:31:45 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/09 16:21:22 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/10/09 16:22:44 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/10/09 16:40:12 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char	*str;
-	int		slen;
+	char *mal;
 
-	slen = ft_strlen(s);
-	slen = (slen - start >= len ? len : slen - start);
-	if (slen <= 0 || !(str = (char *)malloc(sizeof(char) * slen)))
+	if (!(mal = malloc(count * size)))
 		return (NULL);
-	str[slen] = 0;
-	while (--slen >= 0)
-		str[slen] = s[start + slen];
-	return (str);
+	while (--size >= 0)
+		mal[size] = 0;
+	return ((void *)mal);
 }

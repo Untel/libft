@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/09 15:58:46 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:39:29 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void		*ft_memmove(void *dst, void* src, size_t len);
 void		*ft_memcpy(void *dst, const void* src, size_t n);
 void		*ft_memccpy(void *dst, const void* src, int c, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
-
+void		*ft_calloc(size_t count, size_t size);
 #endif

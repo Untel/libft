@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:55:09 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/09 16:08:02 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:31:46 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,6 +243,13 @@ int test_memcmp()
 		;
 }
 
+int test_calloc()
+{
+	return memcmp(calloc(10, 10), ft_calloc(10, 10), 11) == 0
+		//&& memcmp(calloc(50, 50), ft_calloc(50, 50), 50) == 0
+		;
+}
+
 int test_substr()
 {
 	char str[50];
@@ -285,5 +292,7 @@ int main()
 	test("memcmp", test_memcmp());
 	test("bzero", test_bzero());
 	test("substr", test_substr());
+	test("calloc", test_calloc());
+	
 	return (0);
 }
