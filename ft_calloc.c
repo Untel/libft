@@ -6,20 +6,22 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 16:22:44 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/09 16:40:12 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/09 17:36:31 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
 	char *mal;
 
-	if (!(mal = malloc(count * size)))
+	size *= count;
+	if (size <= 0 || !(mal = malloc(size)))
 		return (NULL);
-	while (--size >= 0)
+	while (size--)
 		mal[size] = 0;
 	return ((void *)mal);
 }

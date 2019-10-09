@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/09 16:39:29 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/09 18:25:04 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char		*ft_strchr(const char *s, int c);
 char        *ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *str, const char *to_find, size_t len);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strtrim(char const *s1, char const *set);
 void		*ft_memset(void *b, int c, size_t len);
 void		*ft_memmove(void *dst, void* src, size_t len);
 void		*ft_memcpy(void *dst, const void* src, size_t n);

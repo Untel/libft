@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 15:31:45 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/09 18:52:59 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/10/09 18:24:41 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/10/09 18:52:12 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <string.h>
-#include <stdlib.h>
+#include "libft.h"
+#include <stdio.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	int		slen;
+	size_t		startl;
+	size_t		endl;
 
-	slen = ft_strlen(s);
-	slen = (slen - start >= len ? len : slen - start);
-	slen = slen > 0 ? slen : 0;
-	if (!(str = (char *)malloc(sizeof(char) * slen)))
-		return (NULL);
-	str[slen] = 0;
-	while (--slen >= 0)
-		str[slen] = s[start + slen];
-	return (str);
+	startl = 0;
+	endl = ft_strlen(s1) - 1;
+	while ((s1[startl] && strchr(set, s1[startl])))
+		startl++;
+	while ((s1[endl] && strchr(set, s1[endl])))
+		endl--;
+	//printf("-- %d %d %d\n", (int)startl, (int)endl, ft_strlen(s1));
+	return (ft_substr(s1, startl, (endl - startl + 1)));
 }

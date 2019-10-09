@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:55:09 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/09 16:31:46 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/09 18:46:14 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,22 +245,40 @@ int test_memcmp()
 
 int test_calloc()
 {
-	return memcmp(calloc(10, 10), ft_calloc(10, 10), 11) == 0
-		//&& memcmp(calloc(50, 50), ft_calloc(50, 50), 50) == 0
-		;
+	//char *str1 = calloc(10, 10);
+	//char *str2 = ft_calloc(10, 10);
+	
+	//for (int i = 0; i < 106; i++)
+	//	printf("idx %d -> Mine:'%p=%d' VS Them:'%p=%d' \n", i, &str1[i], str1[i], &str2[i], str2[i]);
+	return memcmp(calloc(10, 10), ft_calloc(10, 10), 10*10) == 0
+	 	&& memcmp(calloc(50, 50), ft_calloc(50, 50), 50*50) == 0
+	 	;
+	return (1);
 }
 
 int test_substr()
 {
 	char str[50];
 	strcpy(str, "Bonjour tlm");
-	printf("\nSubstr '%s'\n\n\n\n", ft_substr(str, 50, 50));
+	//printf("\nSubstr '%s'\n\n\n\n", ft_substr(str, 50, 50));
 	return strcmp(ft_substr(str, 0, 7), "Bonjour") == 0
 		&& strcmp(ft_substr(str, 1, 7), "onjour ") == 0
 		&& strcmp(ft_substr(str, 0, 6), "Bonjou") == 0
 		&& strcmp(ft_substr(str, 8, 50), "tlm") == 0
 		&& ft_substr(str, 50, 50)[0] == '\0'
 		;
+}
+
+int test_strjoin()
+{
+	//printf("STRJOIN '%s'\n\n", ft_strjoin(str1, str2));
+	return (strcmp(ft_strjoin("bonjour", " les gens"), "bonjour les gens") == 0);
+}
+
+int test_strtrim()
+{
+	printf("STRTRIM = '%s'\n\n", ft_strtrim(".. ", " .sSu"));
+	return (strcmp(ft_strjoin("bonjour", " les gens"), "bonjour les gens") == 0);
 }
 
 void test(char* name, int res)
@@ -293,6 +311,8 @@ int main()
 	test("bzero", test_bzero());
 	test("substr", test_substr());
 	test("calloc", test_calloc());
-	
+	test("strjoin", test_strjoin());
+	test("strtrim", test_strtrim());
+
 	return (0);
 }
