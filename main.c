@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adda-sil <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:55:09 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/07 18:48:26 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:08:02 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,6 +243,19 @@ int test_memcmp()
 		;
 }
 
+int test_substr()
+{
+	char str[50];
+	strcpy(str, "Bonjour tlm");
+	printf("\nSubstr '%s'\n\n\n\n", ft_substr(str, 50, 50));
+	return strcmp(ft_substr(str, 0, 7), "Bonjour") == 0
+		&& strcmp(ft_substr(str, 1, 7), "onjour ") == 0
+		&& strcmp(ft_substr(str, 0, 6), "Bonjou") == 0
+		&& strcmp(ft_substr(str, 8, 50), "tlm") == 0
+		&& ft_substr(str, 50, 50)[0] == '\0'
+		;
+}
+
 void test(char* name, int res)
 {
 	printf("--- test %s ---\n", name);
@@ -271,5 +284,6 @@ int main()
 	test("memchr", test_memchr());
 	test("memcmp", test_memcmp());
 	test("bzero", test_bzero());
+	test("substr", test_substr());
 	return (0);
 }

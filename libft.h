@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adda-sil <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/07 18:26:37 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/09 15:58:46 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void		ft_bzero(void *s, size_t n);
 char		*ft_strchr(const char *s, int c);
 char        *ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *str, const char *to_find, size_t len);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 void		*ft_memset(void *b, int c, size_t len);
 void		*ft_memmove(void *dst, void* src, size_t len);
 void		*ft_memcpy(void *dst, const void* src, size_t n);
