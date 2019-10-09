@@ -12,7 +12,7 @@
 
 int	ft_strlen(const char *str)
 {
-	char *ptr;
+	const char *ptr;
 
 	ptr = str;
 	while (ptr && *ptr)

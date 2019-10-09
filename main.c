@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+#include "libft.h"
 #include <stdlib.h>
 
 void test_strs(char *str1, char *str2)
@@ -108,12 +106,13 @@ int test_strrchr()
 
 int test_strncmp()
 {
-	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salut", "Salut", 5), ft_strncmp("Salut", "Salut", 5));
-	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Saluy", "Saluw", 5), ft_strncmp("Saluy", "Saluw", 5));
-	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salu", "Salut", 3), ft_strncmp("Salu", "Salut", 3));
-	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salut", "Salut", 3), ft_strncmp("Salut", "Salut", 3));
-	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salu", "Salut", 20), ft_strncmp("Salu", "Salut", 20));
-	// printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salut", "Salut", 20), ft_strncmp("Salut", "Salut", 20));
+	printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salut", "Salut", 5), ft_strncmp("Salut", "Salut", 5));
+	printf("CMP TEST: '%d' VS '%d'\n", strncmp("est", "test", 3), ft_strncmp("est", "test", 3));
+	printf("CMP TEST: '%d' VS '%d'\n", strncmp("Saluy", "Saluw", 5), ft_strncmp("Saluy", "Saluw", 5));
+	printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salu", "Salut", 3), ft_strncmp("Salu", "Salut", 3));
+	printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salut", "Salut", 3), ft_strncmp("Salut", "Salut", 3));
+	printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salu", "Salut", 20), ft_strncmp("Salu", "Salut", 20));
+	printf("CMP TEST: '%d' VS '%d'\n", strncmp("Salut", "Salut", 20), ft_strncmp("Salut", "Salut", 20));
 	return strncmp("Salut", "Salut", 5) == ft_strncmp("Salut", "Salut", 5)
 		&& strncmp("Salu", "Salut", 5) == ft_strncmp("Salu", "Salut", 5)
 		&& strncmp("Salu", "Salut", 3) == ft_strncmp("Salu", "Salut", 3)
@@ -161,6 +160,20 @@ int test_memset()
 	ft_memset(str2,'x', 7);
 
 	return strcmp(str, str2) == 0
+		;
+}
+
+int test_bzero()
+{
+	char str[50];
+	char str2[50];
+
+	strcpy(str, "Bonjour a touuuuus");
+	strcpy(str2, "Bonjour a touuuuus");
+	bzero(str, 7);
+	ft_bzero(str2, 7);
+
+	return memcmp(str, str2, 7) == 0
 		;
 }
 
@@ -218,6 +231,18 @@ int test_memchr()
 		;
 }
 
+int test_memcmp()
+{
+	char str[30] = { 'S', 'a', '\0', 'l', 'u', 't' };
+	char str2[30] = { 'S', 'a', '\0', 'l', 'u', 't' };
+	char str3[30] = { 'S', 'a', '\0', 'o', 'u', 't' };
+	return memcmp(str, str2, 30) == ft_memcmp(str, str2, 30)
+		&& memcmp(str2, str3, 30) == ft_memcmp(str2, str3, 30)
+		&& memcmp(str, str2, 3) == ft_memcmp(str, str2, 3)
+		&& memcmp(str3, str2, 3) == ft_memcmp(str3, str2, 3)
+		;
+}
+
 void test(char* name, int res)
 {
 	printf("--- test %s ---\n", name);
@@ -227,6 +252,7 @@ void test(char* name, int res)
 
 int main()
 {
+	test("strncmp", test_strncmp());
 	test("isalpha", test_isalpha());
 	test("isalnum", test_isalnum());
 	test("isdigit", test_isdigit());
@@ -236,7 +262,6 @@ int main()
 	test("tolower", test_tolower());
 	test("strchr", test_strchr());
 	test("strrchr", test_strrchr());
-	test("strncmp", test_strncmp());
 	test("strnstr", test_strnstr());
 	test("atoi", test_atoi());
 	test("memset", test_memset());
@@ -244,5 +269,7 @@ int main()
 	test("memcpy", test_memcpy());
 	test("memccpy", test_memccpy());
 	test("memchr", test_memchr());
+	test("memcmp", test_memcmp());
+	test("bzero", test_bzero());
 	return (0);
 }
