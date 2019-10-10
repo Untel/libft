@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adda-sil <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 17:37:30 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/07 18:48:42 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/10 17:15:21 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_space(char c)
+int	static is_space(char c)
 {
 	return (c == '\t'
 			|| c == '\n'
@@ -44,7 +44,7 @@ int	ft_atoi(char *str)
 	if (is_sign(str[i]))
 		if (str[i++] == '-')
 			sign = -1;
-	while (is_num(str[i]))
+	while (ft_is_digit(str[i]))
 		count = count * 10 + (str[i++] - '0');
 	return (count * sign);
 }

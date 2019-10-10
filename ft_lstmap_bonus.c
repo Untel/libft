@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 16:32:25 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 16:58:39 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/10/10 17:02:01 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/10/10 17:12:31 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(void *))
 {
-	t_list *next;
+	t_list *first;
+	t_list *node;
 
-	while (lst[0])
+	if (!(first = malloc(sizeof(t_list))))
+		return (NULL);
+	first = f(lst->content);
+	node = first;
+	while ((lst = lst->next))
 	{
-		next = lst[0]->next;
-		del(lst[0]->content);
-		free(lst[0]);
-		lst[0] = next;
+		if (!(node->next = malloc(sizeof(t_list))))
+			return (NULL);
+		node->next = f(lst->content);
 	}
+	return (first);
 }
