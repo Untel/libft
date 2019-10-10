@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:55:09 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/09 18:46:14 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/10 15:21:49 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -277,8 +277,43 @@ int test_strjoin()
 
 int test_strtrim()
 {
-	printf("STRTRIM = '%s'\n\n", ft_strtrim(".. ", " .sSu"));
-	return (strcmp(ft_strjoin("bonjour", " les gens"), "bonjour les gens") == 0);
+	//printf("STRTRIM = '%s'\n\n", ft_strtrim("..", " .sSu"));
+	return (strcmp(ft_strtrim(".. bonjour  .", ". "), "bonjour") == 0);
+}
+
+int test_split()
+{
+	char **splited = ft_split(" Bonjour les gens  ", ' ');
+	// printf("Splited: ");
+	// while (*splited)
+	// 	printf("'%s', ", *splited++);
+	return (strcmp(splited[0], "Bonjour") == 0
+		&& strcmp(splited[1], "les") == 0
+		&& strcmp(splited[2], "gens") == 0)
+		&& splited[3] == NULL;
+}
+
+int test_itoa()
+{
+	return strcmp(ft_itoa(-123), "-123") == 0
+		&& strcmp(ft_itoa(-2147483648), "-2147483648") == 0
+		&& strcmp(ft_itoa(2), "2") == 0
+		&& strcmp(ft_itoa(-0), "0") == 0
+		&& strcmp(ft_itoa(123), "123") == 0
+		&& strcmp(ft_itoa(9999), "9999") == 0
+		&& strcmp(ft_itoa(2147483647), "2147483647") == 0
+	;
+}
+
+int even_case(unsigned int idx, char c)
+{
+	return (idx % 2 ? ft_tolower(c) : ft_toupper(c));
+}
+
+int test_strmapi()
+{
+	return strcmp(ft_strmapi("bOnjour a touS", even_case), "BoNjOuR A ToUs") == 0
+	;
 }
 
 void test(char* name, int res)
@@ -313,6 +348,8 @@ int main()
 	test("calloc", test_calloc());
 	test("strjoin", test_strjoin());
 	test("strtrim", test_strtrim());
-
+	test("strsplit", test_split());
+	test("itoa", test_itoa());
+	test("strmapi", test_strmapi());	
 	return (0);
 }
