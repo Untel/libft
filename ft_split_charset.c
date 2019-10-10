@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splitm.c                                        :+:      :+:    :+:   */
+/*   ft_split_charset.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 08:05:27 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 12:19:07 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/10 12:28:45 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 int		ft_str_occurence(char *str, char *charset, int charset_len)
@@ -45,7 +44,7 @@ int		alloc_str(char **res, int i, char *str, int len)
 	return (len);
 }
 
-char	**ft_splitm(char *str, char *charset)
+char	**ft_split_charset(char *str, char *charset)
 {
 	char	*ptr_end;
 	char	**res;
