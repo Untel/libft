@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adda-sil <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:09:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/07 13:29:48 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/10 17:36:38 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void *ft_memmove(void *dst, void* src, size_t len)
+void	*ft_memmove(void *dst, void* src, size_t len)
 {
 	unsigned char *tmp_dst;
 	unsigned char *tmp_src;
@@ -29,5 +29,5 @@ void *ft_memmove(void *dst, void* src, size_t len)
 	else
 		while (len--)
 			*tmp_dst++ = *tmp_src++;
-	return dst;
+	return (dst);
 }

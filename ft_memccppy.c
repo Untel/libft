@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memccppy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adda-sil <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 13:09:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/07 13:29:48 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/10/10 17:34:58 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/10/10 17:35:02 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void *ft_memccpy(void *dst, const void* src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned char *tmp_dst;
-	const unsigned char *tmp_src;
+	unsigned char		*tmp_dst;
+	const unsigned char	*tmp_src;
 
 	tmp_dst = dst;
 	tmp_src = src;
@@ -24,5 +24,5 @@ void *ft_memccpy(void *dst, const void* src, int c, size_t n)
 			return (tmp_dst + 1);
 		else
 			*tmp_dst++ = *tmp_src++;
-	return dst;
+	return (dst);
 }

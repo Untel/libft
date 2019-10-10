@@ -6,13 +6,12 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:24:41 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 12:42:47 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/10 17:41:48 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
-#include <stdio.h>
+#include <string.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
