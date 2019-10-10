@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:32:25 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 16:58:39 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/10 17:54:38 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (lst[0])
 	{
 		next = lst[0]->next;
-		del(lst[0]->content);
-		free(lst[0]);
+		ft_lstdelone(lst[0], del);
 		lst[0] = next;
 	}
 }
