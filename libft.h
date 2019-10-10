@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/09 18:25:04 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/10 12:24:45 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		ft_bzero(void *s, size_t n);
 char		*ft_strchr(const char *s, int c);
 char        *ft_strrchr(const char *s, int c);
+char		*ft_strstr(char *str, char *to_find);
 char		*ft_strnstr(const char *str, const char *to_find, size_t len);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
@@ -41,4 +42,6 @@ void		*ft_memcpy(void *dst, const void* src, size_t n);
 void		*ft_memccpy(void *dst, const void* src, int c, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
 void		*ft_calloc(size_t count, size_t size);
+char		**ft_splitm(char *str, char *charset);
+char		**ft_split(char *str, char c);
 #endif

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 16:22:44 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 11:46:24 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/07/14 08:05:27 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/10/10 12:26:29 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	**ft_split(char *str, char c)
 {
-	char *mal;
+	char cs[2];
 
-	size *= count;
-	if (size <= 0 || !(mal = malloc(size)))
-		return (NULL);
-	while (size--)
-		mal[size] = 0;
-	return ((void *)mal);
+	cs[0] = c;
+	cs[1] = 0;
+	return (ft_splitm(str, cs));
 }

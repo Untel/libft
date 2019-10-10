@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adda-sil <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 16:11:02 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/07 18:40:40 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/10 11:55:11 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	int i;
-	int j;
-	size_t flen;
+	int		i;
+	int		j;
+	size_t	flen;
 
 	if (!*to_find)
 		return ((char *)str);

@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:24:41 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/09 18:52:12 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/10 11:56:04 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		startl++;
 	while ((s1[endl] && strchr(set, s1[endl])))
 		endl--;
-	//printf("-- %d %d %d\n", (int)startl, (int)endl, ft_strlen(s1));
 	return (ft_substr(s1, startl, (endl - startl + 1)));
 }
