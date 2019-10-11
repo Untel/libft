@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:15:50 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/11 19:46:57 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/11 20:28:51 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	ft_lstlast(alst[0])->next = new;
+	if (alst && new)
+	{
+		if (*alst)
+			ft_lstlast(*alst)->next = new;
+		else
+			*alst = new;
+	}
 }

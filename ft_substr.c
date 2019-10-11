@@ -6,23 +6,30 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:31:45 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 17:42:17 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/11 21:35:18 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	int		slen;
+	int		delta;
 
 	slen = ft_strlen(s);
-	slen = (slen - start >= len ? len : slen - start);
-	slen = slen > 0 ? slen : 0;
-	if (!(str = (char *)malloc(sizeof(char) * slen)))
+	delta = (slen - (start));
+	if (delta > 0 && delta <= slen)
+		slen = len;
+	else if (delta > 0 && delta > slen)
+		slen = delta;
+	else
+		slen = 0;
+	if (!(str = (char *)malloc(sizeof(char) * slen + 1)))
 		return (NULL);
 	str[slen] = 0;
 	while (--slen >= 0)

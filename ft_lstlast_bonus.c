@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:13:02 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/11 19:47:39 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/11 20:14:12 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst->next)
-		lst = lst->next;
+	if (lst)
+		while (lst->next)
+			lst = lst->next;
 	return (lst);
 }
