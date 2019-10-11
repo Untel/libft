@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 17:37:30 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 17:31:03 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/10/11 16:26:37 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/10/11 17:31:27 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int static is_space(char c)
+int	ft_isspace(char c)
 {
 	return (c == '\t'
-			|| c == '\n'
-			|| c == '\v'
-			|| c == '\f'
-			|| c == '\r'
-			|| c == ' ');
+		|| c == '\n'
+		|| c == '\v'
+		|| c == '\f'
+		|| c == '\r'
+		|| c == ' ');
 }
 
 int	ft_atoi(char *str)
@@ -31,7 +31,7 @@ int	ft_atoi(char *str)
 	i = 0;
 	count = 0;
 	sign = 1;
-	while (is_space(str[i]))
+	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		if (str[i++] == '-')

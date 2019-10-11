@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 17:03:41 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/11 17:53:14 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define LIBFT_H
 #include <string.h>
 #include <ctype.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 int			ft_strlen(const char *str);
 int			ft_atoi(char *str);
 int			ft_isalpha(unsigned char c);
@@ -22,6 +28,7 @@ int         ft_islower(unsigned char c);
 int         ft_isupper(unsigned char c);
 int         ft_isdigit(unsigned char c);
 int         ft_isalnum(unsigned char c);
+int         ft_isspace(char c);
 int			ft_isascii(int c);
 int			ft_isprint(int c);
 int			ft_toupper(int c);
@@ -52,13 +59,6 @@ void		*ft_calloc(size_t count, size_t size);
 char		**ft_split(char *str, char c);
 char		**ft_split_charset(char *str, char *charset);
 char		**ft_split_spaces(char *str);
-
-typedef struct		s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-
 t_list		*ft_lstnew(void *content);
 t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(void *));
@@ -68,5 +68,4 @@ void		ft_lstadd_back(t_list **alst, t_list *new);
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
-
 #endif

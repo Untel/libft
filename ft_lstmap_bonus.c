@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 13:09:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 17:36:38 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/10/10 17:02:01 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/10/10 19:21:35 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
+#include <stdlib.h>
 
-void	*ft_memmove(void *dst, void* src, size_t len)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(void *))
 {
-	unsigned char *tmp_dst;
-	unsigned char *tmp_src;
+	t_list *first;
+	t_list *node;
 
-	tmp_dst = dst;
-	tmp_src = src;
-	if (src < dst && dst < src + len)
+	if (!(first = malloc(sizeof(t_list))))
+		return (NULL);
+	first = f(lst->content);
+	node = first->next;
+	while ((lst = lst->next))
 	{
-		tmp_dst += len;
-		tmp_src += len;
-		while (len--)
-			*--tmp_dst = *--tmp_src;
+		if (!(node = malloc(sizeof(t_list))))
+			return (NULL);
+		node = f(lst->content);
+		node = node->next;
 	}
-	else
-		while (len--)
-			*tmp_dst++ = *tmp_src++;
-	return (dst);
+	return (first);
 }
