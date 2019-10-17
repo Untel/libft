@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:28:28 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 17:38:48 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/14 18:41:23 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		else
 			s++;
-	return (!c ? (char *)s : 0);
+	return (!c && !*s ? (char *)s : 0);
 }

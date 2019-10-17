@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 17:14:11 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/11 18:11:20 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/17 19:23:48 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	i = dstsize - dest_len;
 	if (i == 0)
 		return (dest_len + ft_strlen(src_ptr));
-	while (*src_ptr != '\0')
+	while (*src_ptr)
 	{
 		if (i != 1)
 		{
@@ -37,6 +37,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 		}
 		src_ptr++;
 	}
-	*dest_ptr = '\0';
+	*dest_ptr = 0;
 	return (dest_len + (src_ptr - src));
 }

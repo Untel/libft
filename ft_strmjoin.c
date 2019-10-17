@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 22:12:16 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 17:40:51 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/17 17:43:45 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strmjoin(int size, char **strs, char *sep)
 	i = -1;
 	while (++i < size)
 		len += ft_strlen(strs[i]);
-	res = malloc(sizeof(char) * len);
+	res = malloc(sizeof(char) * (len + 1));
 	i = -1;
 	while (++i < size)
 	{
