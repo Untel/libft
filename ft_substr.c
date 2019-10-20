@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:31:45 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/11 21:35:18 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/20 19:44:29 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		slen = delta;
 	else
 		slen = 0;
-	if (!(str = (char *)malloc(sizeof(char) * slen + 1)))
+	if (!(str = (char *)malloc(sizeof(char) * (slen + 1))))
 		return (NULL);
 	str[slen] = 0;
 	while (--slen >= 0)
