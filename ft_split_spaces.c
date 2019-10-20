@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 08:05:27 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 17:38:32 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/20 19:41:13 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ char	**ft_split_spaces(char *str)
 {
 	char *spaces;
 
-	spaces = "\t\n\v\f\r	 ";
+	spaces = "\t\n\v\f\r ";
 	return (ft_split_charset(str, spaces));
 }
