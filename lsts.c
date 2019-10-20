@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:55:09 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/11 20:02:37 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/20 16:30:52 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 int even_case(unsigned int idx, char c)
 {
 	return (idx % 2 ? ft_tolower(c) : ft_toupper(c));
+}
+
+void del(void *content)
+{
+	content = NULL;
 }
 
 int	test_lstnew()
@@ -41,7 +46,7 @@ int	test_lstmap()
 	ft_lstadd_back(&one, two);
 	ft_lstadd_back(&one, three);
 	ft_lstprint(one, "Before mapping");
-	t_list *new = ft_lstmap(one, (void *(*)(void *))ft_upcase);
+	t_list *new = ft_lstmap(one, (void *(*)(void *))ft_upcase, del);
 	ft_lstprint(new, "After mapping new");
 	return (1);
 }
