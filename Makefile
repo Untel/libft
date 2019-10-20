@@ -43,16 +43,4 @@ fclean:			clean
 
 re:				fclean all
 
-test:			all
-				$(CC) test.c -I $(INCLUDES_DIR) -L. -lft
-
-list:			all
-				$(CC) lsts.c -I $(INCLUDES_DIR) -L. -lft
-
-run:			test
-				./a.out
-
-norme:			
-				norminette $(SRCS) $(BONUS)
-
-.PHONY:			all clean fclean re test bonus norme
+.PHONY:			all clean fclean re test bonus
