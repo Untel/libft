@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 16:22:44 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 17:31:56 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:35:28 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 	char *mal;
 
 	size *= count;
-	if (size <= 0 || !(mal = malloc(size)))
+	if (size < 0 || !(mal = malloc(size)))
 		return (NULL);
 	while (size--)
 		mal[size] = 0;

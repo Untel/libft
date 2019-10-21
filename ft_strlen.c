@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 19:38:33 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 17:40:06 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:07:11 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strlen(const char *str)
 	const char *ptr;
 
 	ptr = str;
-	while (ptr && *ptr)
+	while (*ptr)
 		ptr++;
 	return (ptr - str);
 }

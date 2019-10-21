@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 16:26:37 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/11 17:31:27 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:16:51 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ int	ft_atoi(char *str)
 		if (str[i++] == '-')
 			sign = -1;
 	while (ft_isdigit(str[i]))
+	{
+		if (i > 18 && str[i] > '7')
+			return (sign == 1 ? -1 : 0);
 		count = count * 10 + (str[i++] - '0');
+	}
 	return (count * sign);
 }

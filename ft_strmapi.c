@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:57:54 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/17 17:42:55 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:26:24 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
 	while (i < len)
 	{
 		str[i] = f(i, s[i]);

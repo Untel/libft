@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:02:01 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/20 20:17:57 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:03:34 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list *first;
 	t_list *node;
 
-	if (!(first = ft_lstnew(f ? f(lst->content) : lst->content)))
+	if (!lst || !(first = ft_lstnew(f ? f(lst->content) : lst->content)))
 		return (NULL);
-	ft_lstdelone(lst, del);
 	node = first;
 	while ((lst = lst->next))
 	{
 		if (!(node->next = ft_lstnew(f ? f(lst->content) : lst->content)))
+		{
+			ft_lstclear(&first, del);
 			return (NULL);
-		ft_lstdelone(lst, del);
+		}
 		node = node->next;
 	}
 	node->next = NULL;
