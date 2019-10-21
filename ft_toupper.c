@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:09:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/11 19:21:39 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:29:58 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ char	*ft_upcase(const char *str)
 	size_t	len;
 
 	len = ft_strlen(str);
-	ptr = malloc(sizeof(char) * len);
+	if (!(ptr = malloc(sizeof(char) * len)))
+		return (NULL);
 	while (*str)
 		*ptr++ = ft_toupper(*str++);
 	*ptr = 0;

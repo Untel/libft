@@ -6,11 +6,11 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:32:51 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/10 17:32:57 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:24:31 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(unsigned char c)
+int		ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

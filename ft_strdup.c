@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 17:35:06 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/17 17:45:44 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:19:01 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strdup(char *src)
 	size_t	size;
 
 	size = ft_strlen(src);
-	mal = malloc(sizeof(char) * (size + 1));
+	if (!(mal = malloc(sizeof(char) * (size + 1))))
+		return (NULL);
 	while (*src)
 		*mal++ = *src++;
 	*mal = 0;
