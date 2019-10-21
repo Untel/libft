@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:31:45 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/20 19:44:29 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:36:50 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		slen;
 	int		delta;
 
+	if (!s)
+		return (NULL);
 	slen = ft_strlen(s);
 	delta = (slen - (start));
 	if (delta > 0 && delta <= slen)

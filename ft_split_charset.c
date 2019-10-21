@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 08:05:27 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/21 17:25:16 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:40:17 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ char	**ft_split_charset(char *str, char *charset)
 	int		str_len;
 	int		i;
 
+	if (!str || !charset)
+		return (NULL);
 	i = -1;
 	len = ft_str_occurence(str, charset, 1);
 	if (!(res = malloc(sizeof(char *) * (len + 1))))
