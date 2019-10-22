@@ -6,14 +6,13 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:31:45 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/21 18:36:50 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/22 21:27:33 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

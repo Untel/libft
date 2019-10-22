@@ -6,21 +6,21 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 08:05:27 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/21 18:40:17 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/22 21:24:21 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int		ft_str_occurence(char *str, char *charset, int charset_len)
+int			ft_str_occurence(const char *str, char *charset, int charset_len)
 {
 	char	*end;
 	int		len;
 	int		count;
 
 	count = 0;
-	while (*charset && (end = ft_strstr(str, charset)))
+	while (*charset && (end = ft_strstr((char *)str, charset)))
 	{
 		len = end - str;
 		if (len > 0)
@@ -32,24 +32,29 @@ int		ft_str_occurence(char *str, char *charset, int charset_len)
 	return (count);
 }
 
-int		alloc_str(char **res, int i, char *str, int len)
+const char	*alloc_str(char **res, int i, const char *str, int len)
 {
 	int j;
 
 	j = -1;
-	res[i] = malloc(sizeof(char) * len + 1);
+	if (!(res[i] = malloc(sizeof(char) * (len + 1))))
+	{
+		while (--i >= 0)
+			free(res[i]);
+		free(res);
+		return (NULL);
+	}
 	while (++j < len)
 		res[i][j] = str[j];
 	res[i][j] = '\0';
-	return (len);
+	return (str + len + 1);
 }
 
-char	**ft_split_charset(char *str, char *charset)
+char		**ft_split_charset(const char *str, char *charset)
 {
 	char	*ptr_end;
 	char	**res;
 	int		len;
-	int		str_len;
 	int		i;
 
 	if (!str || !charset)
@@ -60,10 +65,11 @@ char	**ft_split_charset(char *str, char *charset)
 		return (NULL);
 	if (len > 0 && *charset)
 	{
-		while ((ptr_end = ft_strstr(str, charset)))
-			if ((str_len = ptr_end - str) > 0)
-				str += alloc_str(res, ++i, str, str_len) + 1;
-			else
+		while ((ptr_end = ft_strstr((char *)str, charset)))
+			if ((ptr_end - str > 0)
+				&& !(str = alloc_str(res, ++i, str, (ptr_end - str))))
+				return (NULL);
+			else if ((ptr_end - str) == 0)
 				str += 1;
 	}
 	if (len > 0 && ft_strlen(str))

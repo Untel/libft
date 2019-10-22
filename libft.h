@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/21 19:00:29 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/22 21:21:49 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef	struct	s_list
 	struct s_list	*next;
 }				t_list;
 int				ft_strlen(const char *str);
-int				ft_atoi(char *str);
+int				ft_atoi(const char *str);
 int				ft_isalpha(int c);
 int				ft_isupper(int c);
 int				ft_islower(int c);
@@ -55,18 +55,18 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char			*ft_upcase(const char *str);
-char			*ft_lowcase(const char *str);
-char			*ft_capitalize(const char *str);
+char			*ft_strupcase(const char *str);
+char			*ft_strlowcase(const char *str);
+char			*ft_strcapitalize(const char *str);
 void			*ft_memset(void *b, int c, size_t len);
 void			*ft_memmove(void *dst, void *src, size_t len);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 void			*ft_calloc(size_t count, size_t size);
-char			**ft_split(char *str, char c);
-char			**ft_split_charset(char *str, char *charset);
-char			**ft_split_spaces(char *str);
+char			**ft_split(const char *str, char c);
+char			**ft_split_charset(const char *str, char *charset);
+char			**ft_split_spaces(const char *str);
 t_list			*ft_lstnew(void *content);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*d)(void *));

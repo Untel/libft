@@ -6,13 +6,13 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 08:05:27 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/20 19:41:13 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/22 16:36:02 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split_spaces(char *str)
+char	**ft_split_spaces(const char *str)
 {
 	char *spaces;
 

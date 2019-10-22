@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_upcase.c                                        :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 13:09:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/21 19:06:42 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/10/22 16:56:01 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/10/22 16:56:42 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
-
-char	*ft_upcase(const char *str)
+int		ft_islower(int c)
 {
-	char	*ptr;
-	size_t	len;
-
-	len = ft_strlen(str);
-	if (!(ptr = malloc(sizeof(char) * len)))
-		return (NULL);
-	while (*str)
-		*ptr++ = ft_toupper(*str++);
-	*ptr = 0;
-	return (ptr - len);
+	return (c >= 'a' && c <= 'z');
 }

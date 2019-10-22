@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_capitalize.c                                    :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:09:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/21 19:06:58 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/22 21:22:58 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_capitalize(const char *str)
+char	*ft_strcapitalize(const char *str)
 {
 	char	*ptr;
 	size_t	len;

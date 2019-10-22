@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 17:35:59 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/21 21:41:44 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/10/07 13:09:40 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/10/22 21:21:36 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
+#include <stdlib.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strlowcase(const char *str)
 {
-	unsigned char		*tmp_dst;
-	const unsigned char *tmp_src;
+	char	*ptr;
+	size_t	len;
 
-	if (dst == src)
-		return (dst);
-	tmp_dst = (unsigned char *)dst;
-	tmp_src = (const unsigned char *)src;
-	while (n-- > 0)
-		*tmp_dst++ = *tmp_src++;
-	return (dst);
+	len = ft_strlen(str);
+	if (!(ptr = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	while (*str)
+		*ptr++ = ft_tolower(*str++);
+	*ptr = 0;
+	return (ptr - len);
 }
