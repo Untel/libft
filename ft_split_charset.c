@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 08:05:27 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/23 15:48:46 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/23 18:53:00 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int			str_occur(char const *str, char *charset, int charset_len)
 	int		count;
 
 	count = 0;
-	while (*charset && (end = ft_strstr((char *)str, charset)))
+	while (*charset && (end = ft_strstr(str, charset)))
 	{
 		len = end - str;
 		if (len > 0)
@@ -65,7 +65,7 @@ char				**ft_split_charset(char const *str, char *charset)
 		return (NULL);
 	if (len > 0 && *charset)
 	{
-		while ((ptr_end = ft_strstr((char *)str, charset)))
+		while ((ptr_end = ft_strstr(str, charset)))
 			if ((ptr_end - str > 0)
 				&& !(str = alloc_str(res, ++i, str, (ptr_end - str))))
 				return (NULL);

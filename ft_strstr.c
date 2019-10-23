@@ -6,17 +6,17 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 12:15:58 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/21 17:30:57 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/23 18:52:30 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strstr(const char *str, const char *to_find)
 {
 	int i;
 	int j;
 
 	if (!*to_find)
-		return (str);
+		return ((char *)str);
 	i = 0;
 	while (str[i])
 	{
@@ -24,7 +24,7 @@ char	*ft_strstr(char *str, char *to_find)
 		while (to_find[j] == str[i + j])
 		{
 			if (to_find[j + 1] == 0)
-				return (&str[i]);
+				return ((char *)&str[i]);
 			j++;
 		}
 		i++;
