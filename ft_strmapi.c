@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:57:54 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/21 18:40:59 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/23 15:40:00 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (i < len)
 	{
-		str[i] = f(i, s[i]);
+		str[i] = f ? f(i, s[i]) : s[i];
 		i++;
 	}
 	str[len] = 0;
