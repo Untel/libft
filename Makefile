@@ -40,7 +40,7 @@ $(NAME):		$(OBJS) libft.h
 
 all:			$(NAME)
 
-bonus:			all $(BONUS_OBJS)
+bonus:			$(NAME) $(BONUS_OBJS)
 				$(AR) $(NAME) $(BONUS_OBJS)
 
 clean:
