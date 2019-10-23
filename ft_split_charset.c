@@ -6,14 +6,14 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 08:05:27 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/22 21:24:21 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/23 15:48:46 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int			ft_str_occurence(const char *str, char *charset, int charset_len)
+static int			str_occur(char const *str, char *charset, int charset_len)
 {
 	char	*end;
 	int		len;
@@ -32,7 +32,7 @@ int			ft_str_occurence(const char *str, char *charset, int charset_len)
 	return (count);
 }
 
-const char	*alloc_str(char **res, int i, const char *str, int len)
+static const char	*alloc_str(char **res, int i, const char *str, int len)
 {
 	int j;
 
@@ -50,7 +50,7 @@ const char	*alloc_str(char **res, int i, const char *str, int len)
 	return (str + len + 1);
 }
 
-char		**ft_split_charset(const char *str, char *charset)
+char				**ft_split_charset(char const *str, char *charset)
 {
 	char	*ptr_end;
 	char	**res;
@@ -60,7 +60,7 @@ char		**ft_split_charset(const char *str, char *charset)
 	if (!str || !charset)
 		return (NULL);
 	i = -1;
-	len = ft_str_occurence(str, charset, 1);
+	len = str_occur(str, charset, 1);
 	if (!(res = malloc(sizeof(char *) * (len + 1))))
 		return (NULL);
 	if (len > 0 && *charset)

@@ -6,23 +6,13 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 16:26:37 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/21 21:39:27 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/23 15:53:12 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(char c)
-{
-	return (c == '\t'
-		|| c == '\n'
-		|| c == '\v'
-		|| c == '\f'
-		|| c == '\r'
-		|| c == ' ');
-}
-
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	unsigned int	i;
 	unsigned int	count;
