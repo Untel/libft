@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/23 18:54:36 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/24 18:45:25 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int				ft_islower(int c);
 int				ft_isupper(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
-int				ft_isspace(char c);
+int				ft_isspace(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
