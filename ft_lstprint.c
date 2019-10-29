@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:59:16 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/11 19:04:26 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/29 20:08:30 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_lstprint(t_list *lst, char *cmt)
 		printf("| %s\n", cmt);
 	while (lst)
 	{
-		printf("| %d | %s \n", i++, lst->content);
+		printf("| %d | \"%s\" \n", i++, lst->content);
 		lst = lst->next;
 	}
 	printf("---------------\n\n");
