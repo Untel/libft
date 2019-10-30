@@ -6,13 +6,13 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:32:42 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/23 15:53:22 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/10/24 18:45:31 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(char c)
+int	ft_isspace(int c)
 {
 	return (c == '\t'
 		|| c == '\n'
