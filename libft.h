@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/24 18:45:25 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/03 22:41:54 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strmjoin(int size, char **strs, char *sep);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_itoa(int n);
+char			*ft_uitoa(unsigned int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strupcase(const char *str);
 char			*ft_strlowcase(const char *str);
