@@ -6,14 +6,14 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 10:06:17 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/04 10:06:32 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/04 10:23:31 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_power(int nb, int power)
+int	ft_pow(int nb, int power)
 {
 	if (power > 0)
-		return (nb * ft_power(nb, power - 1));
+		return (nb * ft_pow(nb, power - 1));
 	else if (power == 0)
 		return (1);
 	else
