@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/05 10:21:19 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/05 18:24:41 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef	struct	s_list
 {
 	void			*content;
+	size_t			size;
 	struct s_list	*next;
 }				t_list;
 int				ft_atoi(const char *str);
@@ -38,6 +39,7 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t			ft_strlen(const char *str);
 size_t			ft_strlcat(char *dest, const char *src, size_t dstsize);
 size_t			ft_strlcpy(char *dest, const char *src, size_t dstsize);
+size_t			ft_strcpy(char *dest, const char *src);
 void			ft_bzero(void *s, size_t n);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
@@ -71,14 +73,14 @@ void			*ft_calloc(size_t count, size_t size);
 char			**ft_split(const char *str, char c);
 char			**ft_split_charset(const char *str, char *charset);
 char			**ft_split_spaces(const char *str);
-t_list			*ft_lstnew(void *content);
+t_list			*ft_lstnew(void *content, size_t size);
 t_list			*ft_lstlast(t_list *lst);
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*d)(void *));
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *), void (*d)(t_list *));
 int				ft_lstsize(t_list *lst);
 void			ft_lstadd_front(t_list **alst, t_list *n);
 void			ft_lstadd_back(t_list **alst, t_list *n);
-void			ft_lstdelone(t_list *lst, void (*del)(void *));
-void			ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_lstdelone(t_list *lst, void (*del)(t_list *));
+void			ft_lstclear(t_list **lst, void (*del)(t_list *));
 void			ft_lstprint(t_list *lst, char *cmt);
-void			ft_lstiter(t_list *lst, void (*f)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(t_list *));
 #endif
