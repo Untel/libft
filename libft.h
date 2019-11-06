@@ -6,13 +6,14 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/06 18:50:50 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/06 22:46:13 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <stdint.h>
 # include <ctype.h>
 
 typedef	struct	s_list
@@ -43,6 +44,7 @@ size_t			ft_strlcat(char *dest, const char *src, size_t dstsize);
 size_t			ft_strlcpy(char *dest, const char *src, size_t dstsize);
 size_t			ft_strcpy(char *dest, const char *src);
 size_t			ft_strcpy_free(char *dest, const char *src, void *to_free);
+size_t			ft_strcat(char *dest, char *src);
 size_t			ft_intlen(int64_t n);
 void			ft_bzero(void *s, size_t n);
 void			ft_putchar_fd(char c, int fd);
@@ -64,7 +66,8 @@ char			*ft_strmjoin(int size, char **strs, char *sep);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_itoa(int n);
 char			*ft_uitoa(unsigned int n);
-char			*ft_llitoa(long long int n);
+char			*ft_llitoa(int64_t n);
+char			*ft_lluitoa(uint64_t nt);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strupcase(const char *str);
 char			*ft_strlowcase(const char *str);
