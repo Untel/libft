@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 13:08:30 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/06 19:35:21 by adda-sil         ###   ########.fr       */
+/*   Created: 2019/07/06 02:22:09 by adda-sil          #+#    #+#             */
+/*   Updated: 2019/11/06 15:52:21 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_strncat(char *dest, char *src, size_t nb)
 {
-	int		length;
-	int		nt;
-	char	*str;
+	char			*dest_ptr;
+	unsigned int	i;
 
-	if (n < 0 && n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	length = ft_intlen(n);
-	nt = (n < 0 ? -n : n);
-	if (!(str = (char *)malloc(sizeof(char) * (length + 1))))
-		return (NULL);
-	str += length;
-	*str = 0;
-	*--str = (nt % 10) + '0';
-	while ((nt /= 10))
-		*--str = (nt % 10) + '0';
-	if (n < 0)
-		*--str = '-';
-	return (str);
+	dest_ptr = dest;
+	i = 0;
+	while (*dest)
+		dest++;
+	while (i < nb && (*dest++ = *src++))
+		i++;
+	if (src[-1])
+		*dest++ = '\0';
+	return (dest_ptr);
 }

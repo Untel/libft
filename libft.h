@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/05 18:24:41 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/06 18:50:50 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,21 @@ int				ft_toupper(int c);
 int				ft_tolower(int c);
 int				ft_pow(int nb, int power);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+void			ft_memdel(void **ptr);
+int				ft_imemdel(void **ptr);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t			ft_strlen(const char *str);
 size_t			ft_strlcat(char *dest, const char *src, size_t dstsize);
 size_t			ft_strlcpy(char *dest, const char *src, size_t dstsize);
 size_t			ft_strcpy(char *dest, const char *src);
+size_t			ft_strcpy_free(char *dest, const char *src, void *to_free);
+size_t			ft_intlen(int64_t n);
 void			ft_bzero(void *s, size_t n);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+char			*ft_strncat(char *dest, char *src, size_t nb);
 char			*ft_upcase(const char *s);
 char			*ft_lowcase(const char *s);
 char			*ft_capitalize(const char *s);
