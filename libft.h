@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/06 22:46:13 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/08 16:43:14 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
-int				ft_pow(int nb, int power);
+uint64_t		ft_pow(uint64_t nb, int power);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 void			ft_memdel(void **ptr);
 int				ft_imemdel(void **ptr);
@@ -68,6 +68,7 @@ char			*ft_itoa(int n);
 char			*ft_uitoa(unsigned int n);
 char			*ft_llitoa(int64_t n);
 char			*ft_lluitoa(uint64_t nt);
+char			*ft_itoa_wrapper(uint64_t nt, char sep, int is_neg);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strupcase(const char *str);
 char			*ft_strlowcase(const char *str);
