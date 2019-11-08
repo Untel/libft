@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:59:16 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/10/29 20:08:30 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/08 17:47:49 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_lstprint(t_list *lst, char *cmt)
 		printf("| %s\n", cmt);
 	while (lst)
 	{
-		printf("| %d | \"%s\" \n", i++, lst->content);
+		printf("| %d | \"%s\" (%lu)\n", i++, lst->content, lst->size);
 		lst = lst->next;
 	}
 	printf("---------------\n\n");
