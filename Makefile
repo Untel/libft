@@ -26,7 +26,7 @@ INCLUDES_DIR	= .
 
 CFLAGS			= -Wall -Wextra -Werror -I $(INCLUDES_DIR)
 
-CC				= gcc
+CC				= clang
 
 AR				= ar rc
 
