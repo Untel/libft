@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/08 16:43:14 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/11 22:45:33 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <string.h>
 # include <stdint.h>
 # include <ctype.h>
+# include <wchar.h>
 
 typedef	struct	s_list
 {
@@ -39,6 +40,8 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 void			ft_memdel(void **ptr);
 int				ft_imemdel(void **ptr);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
+int				ft_wchar_to_char(char *buff, wchar_t code);
+int				ft_wchars_to_str(char *buff, wchar_t *codes);
 size_t			ft_strlen(const char *str);
 size_t			ft_strlcat(char *dest, const char *src, size_t dstsize);
 size_t			ft_strlcpy(char *dest, const char *src, size_t dstsize);
