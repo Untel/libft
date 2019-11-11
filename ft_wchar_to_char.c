@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 22:35:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/11 22:47:15 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/12 00:03:32 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,17 @@ int
 	unsigned char	wchar[5];
 
 	bits = ft_count_bits(code);
-	if (!buff || bits > 21 || code < 0)
+	if (!buff || bits > 21 || code < 0 || code > 0x10FFFF)
 		return (-1);
-	i = 0;
+	i = -1;
 	wchar[4] = 0;
-	while (bits > masks[0][i])
+	while (bits > masks[0][++i])
 	{
 		wchar[3 - i] = (unsigned char)((code & 63) | 128);
-		i++;
 		code >>= 6;
 		bits -= 6;
 	}
-	if (3 - i < 0)
+	if ((3 - i) < 0)
 		return (-1);
 	wchar[3 - i] = (unsigned char)((code & masks[1][i]) | masks[2][i]);
 	ft_strcpy(buff, (char *)&wchar[3 - i]);
