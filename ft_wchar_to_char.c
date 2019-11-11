@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 22:35:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/12 00:03:32 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/12 00:26:08 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int
 	int	ret;
 
 	len = 0;
-	while (*codes && ((ret = ft_wchar_to_char(buff, *codes++)) > -1))
+	while (*codes && ((ret = ft_wchar_to_char(&buff[len], *codes++)) > -1))
 		len += ret;
 	return (ret > -1 ? len : ret);
 }
