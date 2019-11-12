@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 22:35:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/12 18:26:39 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/12 18:33:44 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ static size_t
 int
 	ft_wchar_to_char(char *buff, wchar_t code)
 {
-	static int		masks[3][4] = {
+	static unsigned char	masks[3][4] = {
 		{ 7, 5, 4, 3 },
-		{ 0b01111111, 0b00011111, 0b00001111, 0b00000011 },
-		{ 0b00000000, 0b11000000, 0b11100000, 0b01111000 }
+		{ 0b01111111, 0b00011111, 0b00001111, 0b00000111 },
+		{ 0b00000000, 0b11000000, 0b11100000, 0b11110000 }
 	};
-	int				bits;
-	int				i;
-	unsigned char	wchar[5];
+	int						bits;
+	int						i;
+	unsigned char			wchar[5];
 
 	bits = ft_count_bits(code);
 	if (!buff || bits > 21 || code < 0 || code > 0x10FFFF)
