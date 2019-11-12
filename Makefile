@@ -43,6 +43,9 @@ clean:
 fclean:			clean
 				$(RM) $(NAME)
 
+norme:				
+				norminette $(SRCS)
+
 re:				fclean all
 
-.PHONY:			all clean fclean re 
+.PHONY:			all clean fclean re norme
