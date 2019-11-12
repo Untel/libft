@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 22:35:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/12 19:48:55 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/12 23:43:18 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,15 @@ static size_t
 static int
 	ft_is_restricted_range(unsigned char *octets, int noct)
 {
-	if (noct == 3)
-	{
-		if (octets[0] == 0b11100000 && (octets[1] & 0b11100000) != 0b10100000)
-			return (1);
-		if (octets[0] == 0b11101101 && (octets[1] & 0b11100000) != 0b10000000)
-			return (1);
-	}
-	if (noct == 4)
-	{
-		if (octets[0] == 0b11110000 && (octets[1] & 0b11110000) != 0b10010000)
-			return (1);
-		if (octets[0] == 0b11110000 && (octets[1] & 0b11100000) != 0b10100000)
-			return (1);
-		if (octets[0] == 0b11110100 && (octets[1] & 0b11110000) != 0b10000000)
-			return (1);
-	}
+	if (noct == 3 && (
+		(octets[0] == 0b11100000 && (octets[1] & 0b11100000) != 0b10100000) ||
+		(octets[0] == 0b11101101 && (octets[1] & 0b11100000) != 0b10000000)))
+		return (1);
+	else if (noct == 4 && (
+		(octets[0] == 0b11110000 && (octets[1] & 0b11110000) != 0b10010000) ||
+		(octets[0] == 0b11110000 && (octets[1] & 0b11100000) != 0b10100000) ||
+		(octets[0] == 0b11110100 && (octets[1] & 0b11110000) != 0b10000000)))
+		return (1);
 	return (0);
 }
 
