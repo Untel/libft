@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/12 22:52:11 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/13 00:28:54 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int				ft_imemdel(void **ptr);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 int				ft_wchar_to_char(char *buff, wchar_t code);
 int				ft_wchars_to_str(char *buff, wchar_t *codes);
+int				ft_is_wchar(unsigned char c);
+int				ft_is_fwchar(unsigned char c);
 size_t			ft_strlen(const char *str);
 size_t			ft_strlcat(char *dest, const char *src, size_t dstsize);
 size_t			ft_strlcpy(char *dest, const char *src, size_t dstsize);
@@ -65,6 +67,7 @@ char			*ft_strstr(const char *str, const char *to_find);
 char			*ft_strnstr(const char *str, const char *to_find, size_t len);
 char			*ft_strdup(const char *src);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_subwstr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strmjoin(int size, char **strs, char *sep);
 char			*ft_strtrim(char const *s1, char const *set);
