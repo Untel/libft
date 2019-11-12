@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 22:35:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/12 18:33:44 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/12 19:48:55 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,28 @@ static size_t
 		if (!(mask <<= 1))
 			return (sizeof(wchar_t));
 	return (ret);
+}
+
+static int
+	ft_is_restricted_range(unsigned char *octets, int noct)
+{
+	if (noct == 3)
+	{
+		if (octets[0] == 0b11100000 && (octets[1] & 0b11100000) != 0b10100000)
+			return (1);
+		if (octets[0] == 0b11101101 && (octets[1] & 0b11100000) != 0b10000000)
+			return (1);
+	}
+	if (noct == 4)
+	{
+		if (octets[0] == 0b11110000 && (octets[1] & 0b11110000) != 0b10010000)
+			return (1);
+		if (octets[0] == 0b11110000 && (octets[1] & 0b11100000) != 0b10100000)
+			return (1);
+		if (octets[0] == 0b11110100 && (octets[1] & 0b11110000) != 0b10000000)
+			return (1);
+	}
+	return (0);
 }
 
 int
@@ -53,6 +75,8 @@ int
 		bits -= 6;
 	}
 	wchar[3 - i] = (unsigned char)((code & masks[1][i]) | masks[2][i]);
+	if (ft_is_restricted_range(&wchar[3 - i], i + 1))
+		return (-1);
 	ft_strcpy(buff, (char *)&wchar[3 - i]);
 	return (i + 1);
 }
