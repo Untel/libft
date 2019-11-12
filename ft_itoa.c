@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:08:30 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/09 02:22:09 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/12 23:22:06 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,15 @@ char	*ft_lluitoa_sep(uint64_t n, char sep)
 	return (ft_itoa_wrapper(n, sep, 0));
 }
 
+#include <stdio.h>
+
 char	*ft_itoa_wrapper(uint64_t n, char sep, int is_neg)
 {
 	size_t		length;
 	char		*str;
 	int			i;
 
-	length = ft_intlen(n);
+	length = ft_uintlen(n);
 	if (sep)
 		length += ((length % 3 == 0 ? -1 : 0) + (length / 3));
 	if (is_neg)
