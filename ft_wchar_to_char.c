@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 22:35:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/13 00:28:13 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/13 00:44:03 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,8 @@ int
 		bits -= 6;
 	}
 	wchar[3 - i] = (unsigned char)((code & masks[1][i]) | masks[2][i]);
-	if (ft_is_restricted_range(&wchar[3 - i], i + 1))
-		return (-1);
-	ft_strcpy(buff, (char *)&wchar[3 - i]);
-	return (i + 1);
+	return (!ft_is_restricted_range(&wchar[3 - i], i + 1)
+		? ft_strcpy(buff, (char *)&wchar[3 - i]) : -1);
 }
 
 int
