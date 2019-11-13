@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:31:45 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/13 00:36:51 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/13 00:54:15 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,10 @@ char	*ft_subwstr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 
+	while (start && s[start] && ft_is_wchar(start) && !ft_is_fwchar(start))
+		start--;
 	i = start + len;
-	while (s[i] && ft_is_wchar(s[i]) && !ft_is_fwchar(s[i]))
+	while (i && s[i] && ft_is_wchar(s[i]) && !ft_is_fwchar(s[i]))
 		i--;
 	return (ft_substr(s, start, (i - start)));
 }

@@ -44,7 +44,7 @@ fclean:			clean
 				$(RM) $(NAME)
 
 norme:				
-				norminette $(SRCS)
+				norminette $(SRCS) libft.h
 
 re:				fclean all
 

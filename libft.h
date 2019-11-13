@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:45:14 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/13 00:28:54 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/13 00:56:09 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,8 @@ char			**ft_split_charset(const char *str, char *charset);
 char			**ft_split_spaces(const char *str);
 t_list			*ft_lstnew(void *content, size_t size);
 t_list			*ft_lstlast(t_list *lst);
-t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *), void (*d)(t_list *));
+t_list			*ft_lstmap(t_list *lst,
+	t_list *(*f)(t_list *), void (*d)(t_list *));
 int				ft_lstsize(t_list *lst);
 void			ft_lstadd_front(t_list **alst, t_list *n);
 void			ft_lstadd_back(t_list **alst, t_list *n);
