@@ -6,7 +6,7 @@
 /*   By: adda-sil <adda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 22:35:40 by adda-sil          #+#    #+#             */
-/*   Updated: 2019/11/13 01:47:20 by adda-sil         ###   ########.fr       */
+/*   Updated: 2019/11/13 21:50:10 by adda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ int
 	int						i;
 	unsigned char			wchar[5];
 
-	bits = ft_count_bits(code);
-	if (!buff || bits > 21 || code < 0 || code > 0x10FFFF)
+	if (!buff || code < 0 || code > 0x10FFFF
+		|| (bits = ft_count_bits(code)) > 21)
 		return (-1);
 	i = -1;
 	wchar[4] = 0;
