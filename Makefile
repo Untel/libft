@@ -1,10 +1,10 @@
-STR_DIR			= .
-CHAR_DIR		= .
-PRINT_DIR		= .
-MEM_DIR			= .
-MATH_DIR		= .
-LIST_DIR		= .
-WCHAR_DIR		= .
+STR_DIR			= str
+CHAR_DIR		= char
+PRINT_DIR		= print
+MEM_DIR			= mem
+MATH_DIR		= math
+LIST_DIR		= list
+WCHAR_DIR		= wide
 INCLUDES_DIR	= .
 
 _MATH			= ft_intlen.c ft_itoa.c ft_uitoa.c ft_atoi.c ft_pow.c
